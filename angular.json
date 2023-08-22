@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "listing-agent": {
+    "assisted-listing": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/listing-agent",
+            "outputPath": "dist/assisted-listing",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "listing-agent:build:production"
+              "browserTarget": "assisted-listing:build:production"
             },
             "development": {
-              "browserTarget": "listing-agent:build:development"
+              "browserTarget": "assisted-listing:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "listing-agent:build"
+            "browserTarget": "assisted-listing:build"
           }
         },
         "test": {

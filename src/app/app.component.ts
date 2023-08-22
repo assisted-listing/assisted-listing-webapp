@@ -7,5 +7,5 @@ import { LoaderComponent } from './services/loader/loader.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'listing-agent';
+  title = 'assisted-listing';
 }
