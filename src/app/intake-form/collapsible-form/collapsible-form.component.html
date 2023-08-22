@@ -1,0 +1,37 @@
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{title}}
+        <mat-icon fontIcon={{icon}}></mat-icon>
+        </mat-panel-title>
+        
+        
+        
+      </mat-expansion-panel-header>
+
+      <div>
+        <mat-selection-list  #section [(ngModel)]="selectedOptions" (ngModelChange)="emitSelections()" [multiple]="multiple">
+          <mat-list-option class="horizontal-mat-list-item" *ngFor="let item of itemTypes" [value]="item">
+            {{item}}
+          </mat-list-option>
+        </mat-selection-list>
+
+        <button mat-fab *ngIf="!addingOption" (click)="addingOption = true" color="primary">
+          <mat-icon>add</mat-icon>
+        </button>
+
+        <mat-form-field *ngIf="addingOption">
+          <mat-label>Add custom {{title}}</mat-label>
+          <input matInput [(ngModel)]="newOption">
+          <button mat-fab (click)="updateOptions()" color="primary">
+            <mat-icon>check</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+  
+      
+  
+    </mat-expansion-panel>
+  

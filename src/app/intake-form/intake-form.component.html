@@ -1,0 +1,11 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<section class="example-section">
+  <mat-checkbox class="example-margin" *ngFor="let section of sections" [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
+</section>
+<mat-accordion class="example-headers-align" multi="false">
+<app-collapsible-form *ngFor="let section of sections.filter(isActive)" (formSelections)="updateSelections($event, section)" title={{section.name}} multiple={{section.multiple}} icon={{section.icon}} [itemTypes]="section.choices"></app-collapsible-form>
+</mat-accordion>
+
+<button mat-fab color="primary" (click)="submitForm()" [disabled]="readyForSubmitValidation()">
+  <mat-icon>arrow_forward</mat-icon>
+</button>
