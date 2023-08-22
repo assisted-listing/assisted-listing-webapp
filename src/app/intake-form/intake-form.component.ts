@@ -14,6 +14,7 @@ export interface HousingSection {
   icon: string;
   locked: string
   selectedOptions: string[];
+
 }
 @Component({
   selector: 'intakeForm',
@@ -22,6 +23,7 @@ export interface HousingSection {
 })
 export class IntakeFormComponent {
   constructor(private openAIService: OpenAiService) { }
+  responseMessage: string;
   
 
 
@@ -47,7 +49,7 @@ export class IntakeFormComponent {
 
   submitForm(){
     this.openAIService.getListing(this.createPrompt()).subscribe((res: any) => {
-      console.log(res)
+      this.responseMessage = res['choices'][0]['message']['content']
     })
   }
 
