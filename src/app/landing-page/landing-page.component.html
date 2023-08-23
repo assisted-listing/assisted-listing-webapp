@@ -1,0 +1,54 @@
+<header hidden="true">
+    <mat-toolbar color="primary">
+      <div class="logo">Assisted Listing</div>
+      <nav>
+        <a mat-button routerLink="/">Home</a>
+        <a mat-button routerLink="/listings">Listings</a>
+        <a mat-button routerLink="/services">Services</a>
+        <a mat-button routerLink="/contact">Contact</a>
+      </nav>
+    </mat-toolbar>
+  </header>
+  
+
+
+<main>
+    <section class="hero" fxLayoutAlign="center center">
+      <div class="hero-content">
+        <h1>Your Perfect Description Awaits</h1>
+        <p>Never write another listing description by hand</p>
+        <a mat-raised-button color="accent" routerLink="/generate">Create</a>
+      </div>
+    </section>
+  
+    <section class="feature" fxLayout="row" fxLayoutGap="2rem" fxLayoutAlign="center start" id="listing-section">
+        <div class="feature-content left">
+          <img src="assets/writing_icon.png" alt="Professional Grade Listings" />
+          <div class="text">
+            <h2>Top Notch Listings</h2>
+            <p>Create professional grade real estate listings with the click of a button.</p>
+          </div>
+        </div>
+      </section>
+    
+      <section class="feature alt-bg" fxLayout="row" fxLayoutGap="2rem" fxLayoutAlign="center start" id="ai-section">
+        <div class="feature-content right">
+          <div class="text">
+            <h2>AI Powered Technology</h2>
+            <p>Leverages the latest AI engine available in GPT 3.5</p>
+          </div>
+          <img src="assets/ai-icon.jpeg" alt="Powered by GPT 3.5 AI" />
+        </div>
+      </section>
+    
+      <section class="feature" fxLayout="row" fxLayoutGap="2rem" fxLayoutAlign="center start" id="service-section">
+        <div class="feature-content left">
+          <img src="assets/ease-of-use.jpg" alt="Personalized Service" />
+          <div class="text">
+            <h2>Personalized Service</h2>
+            <p> Easy to use interface that tailors responses to your individual property, location, and writing preference.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  
