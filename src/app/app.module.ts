@@ -21,6 +21,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoaderInterceptor } from './services/loader/loader.interceptor';
 import { LoaderComponent } from './services/loader/loader.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ResultPageComponent } from './result-page/result-page.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 
@@ -29,7 +32,7 @@ import { LoaderComponent } from './services/loader/loader.component';
     AppComponent,
     IntakeFormComponent,
     CollapsibleFormComponent, 
-    LoaderComponent
+    LoaderComponent, LandingPageComponent, ResultPageComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { LoaderComponent } from './services/loader/loader.component';
       MatCheckboxModule,
       FormsModule,
       HttpClientModule,
-      NgxSpinnerModule
+      NgxSpinnerModule,
+      MatProgressBarModule
   ],
   providers: [
     {
