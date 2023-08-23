@@ -1,13 +1,57 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<section class="example-section">
-  <mat-checkbox class="example-margin" *ngFor="let section of sections" [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
-</section>
-<mat-accordion class="example-headers-align" multi="false">
-<app-collapsible-form *ngFor="let section of sections.filter(isActive)" (formSelections)="updateSelections($event, section)" title={{section.name}} multiple={{section.multiple}} icon={{section.icon}} [itemTypes]="section.choices"></app-collapsible-form>
-</mat-accordion>
 
-<button mat-fab color="primary" (click)="submitForm()" [disabled]="readyForSubmitValidation()">
-  <mat-icon>arrow_forward</mat-icon>
-</button>
+<div class="checkbox-section-header">
+  <h2>Select Sections to Include</h2>
+  <p>Specify selections you would like to mention in your listing:</p>
+</div>
+
+<section class="checkbox-section">
+  <div class="section-box">
+    <div class="section-title">Section 1</div>
+    <mat-checkbox color="warn" class="example-margin" *ngFor="let section of sections.filter(homeFilter)"
+      [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
+  </div>
+  <div class="section-box">
+    <div class="section-title">Section 2</div>
+    <mat-checkbox color="warn" class="example-margin" *ngFor="let section of sections.filter(interiorFilter)"
+      [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
+
+  </div>
+  <div class="section-box">
+    <div class="section-title">Section 3</div>
+    <mat-checkbox color="warn" class="example-margin" *ngFor="let section of sections.filter(propertyFilter)"
+      [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
+
+  </div>
+  <div class="section-box">
+    <div class="section-title">Section 4</div>
+    <mat-checkbox color="warn" class="example-margin" *ngFor="let section of sections.filter(writingFilter)"
+      [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
+
+  </div>
+</section>
+
+<div class="bottom-section">
+  <div class="accordion-section">
+    <mat-accordion class="example-headers-align" multi="false">
+      <app-collapsible-form *ngFor="let section of sections.filter(isActive)"
+        (formSelections)="updateSelections($event, section)" title={{section.name}} multiple={{section.multiple}}
+        icon={{section.icon}} [itemTypes]="section.choices"></app-collapsible-form>
+    </mat-accordion>
+  </div>
+  <div class="progress-section">
+    <div class="progress-bar-container">
+      <mat-progress-bar class="progress-bar" mode="determinate" color="primary" [value]="progress()"></mat-progress-bar>
+    </div>
+    <div class="status-section">
+      <span *ngFor="let section of sections.filter(isActive)">{{section.name}}: {{section.selectedOptions.toString()}}</span>
+    </div>
+    <button mat-fab class="submitButton" (click)="submitForm()" [disabled]="readyForSubmitValidation()">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+</div>
+
+
 
 <span>{{responseMessage}}</span>

@@ -1,37 +1,50 @@
+<mat-expansion-panel class="custom-panel">
+  <mat-expansion-panel-header class="custom-header">
+    <mat-panel-title class="custom-title">
+      <mat-icon *ngIf="selectedOptions.length > 0" class="custom-validated">check</mat-icon>
 
+      {{ title }}
+      <mat-icon class="custom-icon">{{ icon }}</mat-icon>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
 
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          {{title}}
-        <mat-icon fontIcon={{icon}}></mat-icon>
-        </mat-panel-title>
-        
-        
-        
-      </mat-expansion-panel-header>
+  <div class="custom-content">
+    <mat-selection-list
+      #section
+      [(ngModel)]="selectedOptions"
+      (ngModelChange)="emitSelections()"
+      [multiple]="multiple"
+      class="custom-selection-list"
+    >
+      <mat-list-option
+        class="custom-list-option"
+        *ngFor="let item of itemTypes"
+        [value]="item"
+      >
+        {{ item }}
+      </mat-list-option>
+    </mat-selection-list>
 
-      <div>
-        <mat-selection-list  #section [(ngModel)]="selectedOptions" (ngModelChange)="emitSelections()" [multiple]="multiple">
-          <mat-list-option class="horizontal-mat-list-item" *ngFor="let item of itemTypes" [value]="item">
-            {{item}}
-          </mat-list-option>
-        </mat-selection-list>
+    <button
+      mat-fab
+      *ngIf="!addingOption"
+      (click)="addingOption = true"
+      color="primary"
+      class="custom-fab"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
 
-        <button mat-fab *ngIf="!addingOption" (click)="addingOption = true" color="primary">
-          <mat-icon>add</mat-icon>
-        </button>
-
-        <mat-form-field *ngIf="addingOption">
-          <mat-label>Add custom {{title}}</mat-label>
-          <input matInput [(ngModel)]="newOption">
-          <button mat-fab (click)="updateOptions()" color="primary">
-            <mat-icon>check</mat-icon>
-          </button>
-        </mat-form-field>
-      </div>
-  
-      
-  
-    </mat-expansion-panel>
-  
+    <div class="custom-form-field" *ngIf="addingOption">
+      <input matInput [(ngModel)]="newOption" class="custom-input" placeholder="Add custom {{title}}..."/>
+      <button
+        mat-fab
+        (click)="updateOptions()"
+        color="primary"
+        class="custom-check-button"
+      >
+        <mat-icon>check</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-expansion-panel>

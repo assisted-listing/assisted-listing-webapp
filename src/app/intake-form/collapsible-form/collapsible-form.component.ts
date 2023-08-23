@@ -6,7 +6,7 @@ import { MatAccordion } from '@angular/material/expansion';
 @Component({
   selector: 'app-collapsible-form',
   templateUrl: './collapsible-form.component.html',
-  styleUrls: ['./collapsible-form.component.scss'],
+  styleUrls: ['../intake-form.component.scss'],
   
 })
 export class CollapsibleFormComponent {
