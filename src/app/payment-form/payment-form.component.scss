@@ -1,0 +1,16 @@
+$custom-primary: #0056b3;
+$custom-accent: #f4f8fd;
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+.purchase-button {
+  background-color: mat-color($custom-primary);
+  color: mat-color($custom-primary, text);
+  &:hover {
+    background-color: mat-color($custom-primary, darker);
+  }
+}

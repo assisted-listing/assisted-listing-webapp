@@ -1,0 +1,37 @@
+<div *ngIf="check && !check.paid" class="page-container">
+    <div class="blurred-answer-container">
+      <div class="blurred-answer-box">
+        <div class="blurred-answer-text">
+            <p class="non-blurred-text">
+                {{partialMessage}}
+            </p>
+          <p>
+            <!-- This part is blurred -->
+            {{check.listing}}
+            <!-- End of blurred part -->
+          </p>
+          
+        </div>
+        <div class="buttons-container">
+          <app-payment-form *ngIf="!isSubscribed()"></app-payment-form>
+          <button *ngIf="!isSubscribed()" (click)="navigateToSubscription()" class="subscribe-button">Subscribe</button>
+          <button *ngIf="isSubscribed()" class="subscribe-button" (click)="claimListing()">Confirm</button>
+
+      </div>  
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="check && check.paid" class="page-container">
+    <div class="blurred-answer-container">
+      <div class="blurred-answer-box">
+        <div class="non-blurred-text">
+            <p class="non-blurred-text">
+                {{check.listing}}
+            </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
