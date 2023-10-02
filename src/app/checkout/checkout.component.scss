@@ -42,6 +42,9 @@ $custom-accent: #f4f8fd;
   border-radius: 10px;
   overflow-y: scroll;
   max-height: 30rem;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .non-blurred-text {

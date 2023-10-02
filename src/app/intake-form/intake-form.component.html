@@ -1,4 +1,3 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="checkbox-section-header">
   <h2>Select Sections to Include</h2>
@@ -7,24 +6,24 @@
 
 <section class="checkbox-section">
   <div class="section-box">
-    <div class="section-title">Section 1</div>
+    <div class="section-title">Home Details</div>
     <mat-checkbox color="warn" class="example-margin" *ngFor="let section of sections.filter(homeFilter)"
       [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
   </div>
   <div class="section-box">
-    <div class="section-title">Section 2</div>
+    <div class="section-title">Interior</div>
     <mat-checkbox color="warn" class="example-margin" *ngFor="let section of sections.filter(interiorFilter)"
       [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
 
   </div>
   <div class="section-box">
-    <div class="section-title">Section 3</div>
+    <div class="section-title">Property</div>
     <mat-checkbox color="warn" class="example-margin" *ngFor="let section of sections.filter(propertyFilter)"
       [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
 
   </div>
   <div class="section-box">
-    <div class="section-title">Section 4</div>
+    <div class="section-title">Writing</div>
     <mat-checkbox color="warn" class="example-margin" *ngFor="let section of sections.filter(writingFilter)"
       [(ngModel)]="section.active" [disabled]="section.locked">{{section.name}} </mat-checkbox>
 
@@ -52,6 +51,3 @@
   </div>
 </div>
 
-
-
-<span>{{responseMessage}}</span>

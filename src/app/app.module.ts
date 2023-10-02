@@ -22,9 +22,19 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { LoaderInterceptor } from './services/loader/loader.interceptor';
 import { LoaderComponent } from './services/loader/loader.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { ResultPageComponent } from './result-page/result-page.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import { NgxStripeModule } from 'ngx-stripe';
+import { PaymentFormComponent } from './payment-form/payment-form.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { HeaderComponent } from './header/header.component'
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { ContactComponent } from './contact/contact.component';
+import { PricingComponent } from './pricing/pricing.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -32,7 +42,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     AppComponent,
     IntakeFormComponent,
     CollapsibleFormComponent, 
-    LoaderComponent, LandingPageComponent, ResultPageComponent
+    LoaderComponent, LandingPageComponent, PaymentFormComponent, HeaderComponent, SidenavComponent, SignUpComponent, SignInComponent, ContactComponent, PricingComponent, CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +61,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
       FormsModule,
       HttpClientModule,
       NgxSpinnerModule,
-      MatProgressBarModule
+      MatProgressBarModule,
+      MatSidenavModule,
+      MatToolbarModule,
+      MatSlideToggleModule,
+      NgxStripeModule.forRoot('pk_test_51NiOkfAtI9Pqdjf04d6aecxeZPJw8JYlLhucHL4dVmepdHVPvsC0Y8LrtvQ3JMWxOrahvh4y0NKYu5iV80g330As00xnYNOdDM'),
+
+      
   ],
   providers: [
     {
