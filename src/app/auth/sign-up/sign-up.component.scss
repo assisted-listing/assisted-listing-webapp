@@ -1,0 +1,77 @@
+/* signin.component.scss */
+.signin-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ccc;
+  
+    
+  
+    .signin-form {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+  
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+  
+      button {
+        width: 100%;
+      }
+    }
+  
+    .signup-link {
+      margin-top: 20px;
+      a {
+        color: blue; /* Change color as needed */
+        text-decoration: none;
+      }
+    }
+
+    mat-form-field {
+        width: 100%;
+        margin-bottom: 20px;
+  
+        /* Remove background from mat-form-field */
+        background: none;
+  
+        input {
+          width: calc(100% - 24px); /* Adjust padding based on your preference */
+          padding: 12px; /* Adjust padding based on your preference */
+          border: 1px solid #ccc; /* Add a border for better distinction */
+          border-radius: 4px; /* Optional: Add border-radius for rounded corners */
+          color: white; /* Text color */
+        }
+      }
+  
+      button {
+        width: 100%;
+      }
+    }
+  
+    .logo {
+        margin-bottom: 40px; /* Increased margin for spacing */
+        text-align: center;
+        background-color: primary;
+        
+        color: primary;
+        padding-inline: 10px;
+        border-radius: 5px;
+        .logo-text {
+          font-size: 48px; /* Increased font size */
+          font-weight: bold;
+          
+          -webkit-background-clip: text; /* Clip text to the background */
+          color: transparent; /* Hide original text color */
+          display: inline-block;
+          /* Optional: Add some padding or margin to make the gradient more visible */
+          padding: 10px;
+          margin: 0;
+        }
+      }
+
+  

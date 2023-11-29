@@ -19,10 +19,11 @@ export class SignInComponent implements OnInit {
     };
     console.log(navState)
 
-    if (navState.redirect !== undefined) {
+    if (navState && 'redirect' in navState) {
       console.log('received redirect')
       this.redirects = navState.redirect
-    }}
+    }
+  }
 
   isLoading: boolean = false;
   email_address: string = "";
@@ -80,7 +81,7 @@ export class SignInComponent implements OnInit {
   }
 
   navigateToLastRedirect(){
-    if (this.redirects !== null && this.redirects.length > 0){
+    if (this?.redirects && this.redirects?.length){
       const route = this.redirects.pop()
       const navigationExtras: NavigationExtras = {
         state: {

@@ -14,8 +14,8 @@
         </div>
         <div class="buttons-container">
           <app-payment-form *ngIf="!isSubscribed()"></app-payment-form>
-          <button *ngIf="!isSubscribed()" (click)="navigateToSubscription()" class="subscribe-button">Subscribe</button>
-          <button *ngIf="isSubscribed()" class="subscribe-button" (click)="claimListing()">Confirm</button>
+          <button *ngIf="!isSubscribed() || user.listingsRemaining <= 0" (click)="navigateToSubscription()" class="subscribe-button">Subscribe</button>
+          <button *ngIf="isSubscribed() && user.listingsRemaining > 0" class="subscribe-button" (click)="claimListing()">Confirm</button>
 
       </div>  
       </div>

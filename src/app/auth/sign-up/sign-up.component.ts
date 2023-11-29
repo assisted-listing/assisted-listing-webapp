@@ -36,7 +36,7 @@ export class SignUpComponent implements OnInit {
       redirect: string[]
     }; 
 
-    if (state.redirect !== undefined){
+    if (state && 'redirect' in state){
       this.redirect = state.redirect
       console.log('redirect received')
     }

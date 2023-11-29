@@ -1,14 +1,23 @@
-<form (submit)="onSignup(signupForm)" #signupForm="ngForm">
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" ngModel #emailInput="ngModel" [(ngModel)]="email" placeholder="Enter Email" name="email" id="email" required>
-
-    <label for="username"><b>Username</b></label>
-    <input type="text" ngModel #universityInput="ngModel" [(ngModel)]="username" placeholder="Enter username" name="username" id="username" required>
-
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" name="password" ngModel minlength="8" #passwordInput="ngModel" [(ngModel)]="password" placeholder="Enter Password" id="psw" required>
-
-    <button type="submit" class="registerbtn">Register</button>
-</form>
+<div class="signin-page">
+    <div class="logo">
+      <h1>Assisted Listing</h1>
+      <h2>Sign Up</h2>
+    </div>
+    <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput name="email"
+        ngModel type="email" #emailInput="ngModel" [(ngModel)]="email" email
+        placeholder="Enter Username" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="password" ngModel type="password" minlength="8" #passwordInput="ngModel" required
+        name="password" placeholder="Enter Password" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Create Account</button>
+    </form>
+    <div class="signup-link">
+      <a routerLink="/login">Already Have an account? Sign In</a>
+    </div>
+  </div>

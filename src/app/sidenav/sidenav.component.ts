@@ -23,4 +23,8 @@ export class SidenavComponent {
     this.onSideNavClose()
   }
 
+  openCustomerPortal(){
+  window.open('https://billing.stripe.com/p/login/test_4gwcQd4TF8qPdVueUU', '_blank')
+}
+
 }

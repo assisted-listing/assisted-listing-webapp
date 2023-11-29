@@ -25,6 +25,8 @@ export class CheckoutComponent {
   loggedin: Boolean
   user: UserDtl
   email: string
+  subscribed: boolean = this.isSubscribed()
+
 
   constructor(private backendService: AlBackendService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
 
@@ -33,7 +35,7 @@ export class CheckoutComponent {
 
     console.log('ID')
     console.log(this.checkoutID)
-    if (this.checkoutID == null ){this.checkoutID = '12345678'}
+    if (this?.checkoutID == null ){this.checkoutID = '12345678'}
 
     this.backendService.getCheckout(this.checkoutID).subscribe((res: any) => {
       console.log(res)
@@ -74,7 +76,7 @@ export class CheckoutComponent {
   else {
     const navigationExtras: NavigationExtras = {
       state: {
-        redirect: ['checkout?checkoutID=' + this.checkoutID, 'pricing']
+        redirect: ['checkout?checkoutID=' + this.checkoutID]
       }
     }
     this.router.navigate(['\login'], navigationExtras)

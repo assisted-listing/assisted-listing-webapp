@@ -18,7 +18,7 @@ export class PricingComponent {
     }
     console.log(state)
 
-    if (state.redirect !== undefined){
+    if (state && 'redirect' in state){
       this.redirect = state.redirect
       console.log('redirect Received')
     } }
@@ -26,7 +26,7 @@ export class PricingComponent {
 
   checked: boolean = false;
   stripePromise = loadStripe('pk_test_51NiOkfAtI9Pqdjf04d6aecxeZPJw8JYlLhucHL4dVmepdHVPvsC0Y8LrtvQ3JMWxOrahvh4y0NKYu5iV80g330As00xnYNOdDM');
-  redirect: string[]
+  redirect: string[] = []
   loggedIn: boolean
   user: UserDtl
   email: string
