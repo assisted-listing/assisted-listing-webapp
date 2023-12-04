@@ -59,6 +59,12 @@ export class AuthGuard implements CanActivate {
         }
         return isAuth;
       }
+      case '/history': {
+        if (!isAuth) {
+          this.router.navigate(['login'])
+        }
+        return isAuth;
+      }
       case '/pricing': {
         if (this.containsCheckout(this.redirects)) {
           //If we're coming here from a checkout (listing has been made)

@@ -35,14 +35,20 @@ import { ContactComponent } from './contact/contact.component';
 import { PricingComponent } from './pricing/pricing.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { CheckoutComponent } from './checkout/checkout.component';
-
+import { environment } from 'src/environments/environment';
+import {MatMenuModule} from '@angular/material/menu';
+import { CartIconComponent } from './header/cart/cart.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import { HistoryComponent } from './history/history.component';
+import { TransactionItemComponent } from './history/transact-item/transact-item.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
     IntakeFormComponent,
     CollapsibleFormComponent, 
-    LoaderComponent, LandingPageComponent, PaymentFormComponent, HeaderComponent, SidenavComponent, SignUpComponent, SignInComponent, ContactComponent, PricingComponent, CheckoutComponent
+    LoaderComponent, LandingPageComponent, PaymentFormComponent, HeaderComponent, SidenavComponent, SignUpComponent, SignInComponent, ContactComponent, PricingComponent, CheckoutComponent, CartIconComponent, HistoryComponent, TransactionItemComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +71,11 @@ import { CheckoutComponent } from './checkout/checkout.component';
       MatSidenavModule,
       MatToolbarModule,
       MatSlideToggleModule,
-      NgxStripeModule.forRoot('pk_test_51NiOkfAtI9Pqdjf04d6aecxeZPJw8JYlLhucHL4dVmepdHVPvsC0Y8LrtvQ3JMWxOrahvh4y0NKYu5iV80g330As00xnYNOdDM'),
+      NgxStripeModule.forRoot(environment.stripePK),
+      MatMenuModule,
+      MatBadgeModule,
+      MatCardModule
+    
 
       
   ],

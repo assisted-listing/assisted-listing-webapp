@@ -1,0 +1,7 @@
+<div class="history-page">
+    <h2 class="page-title">Transaction History</h2>
+    <div *ngFor="let transaction of transactions">
+      <app-transact-item [transaction]="transaction" ></app-transact-item>
+    </div>
+  </div>
+  

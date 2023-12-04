@@ -82,14 +82,38 @@ export class SignInComponent implements OnInit {
 
   navigateToLastRedirect(){
     if (this?.redirects && this.redirects?.length){
-      const route = this.redirects.pop()
-      const navigationExtras: NavigationExtras = {
-        state: {
-          redirect: this.redirects
+      const route = this.redirects.pop()!
+      
+
+      if (route.includes('?')){
+        console.log('special route')
+        const base = route.split('?')[0]
+        const params = route.split('?')[1]
+        console.log(base)
+        console.log(params)
+        console.log(params.split('=')[1])
+        const navigationExtras: NavigationExtras = {
+          queryParams: { checkoutID : params.split('=')[1] },
+          state: {
+            redirect: this.redirects
+
+          }
         }
+        this.router.navigate([decodeURIComponent(base)], navigationExtras)
+
+
+
+      }
+      else
+      {
+        const navigationExtras: NavigationExtras = {
+          state: {
+            redirect: this.redirects
+          }
+        }
+        this.router.navigate([decodeURIComponent(route)], navigationExtras)
       }
 
-      this.router.navigate([route], navigationExtras)
 
     
     }

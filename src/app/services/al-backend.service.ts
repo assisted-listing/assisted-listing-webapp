@@ -24,6 +24,11 @@ export class AlBackendService {
     return this.http.get(this.apiUrl + 'checkout?checkoutID=' + ID, { headers: this.headers })
     .pipe<Checkout>(map((data: any) => data));
   }
+  getCheckoutsForUser(userID: string) {
+
+    return this.http.get(this.apiUrl + 'checkout/user?userID=' + userID, { headers: this.headers })
+    .pipe<Checkout[]>(map((data: any) => data));
+  }
 
   getSubscriptionStatus(email: string) {
 
@@ -32,9 +37,9 @@ export class AlBackendService {
     .pipe<Checkout>(map((data: any) => data));
   }
 
-  createListing(prompt: String){
+  createListing(prompt: String, listing: String){
     const userAttr: User = this.authService.getUserAttributes()
-    const body = {'user': userAttr.email,'prompt':prompt}
+    const body = {'user': userAttr.email,'prompt':prompt, 'listing':listing}
     return this.http.post(this.apiUrl + 'checkout', { headers: this.headers, body: body }, )
     .pipe<Checkout>(map((data: any) => data));
   }

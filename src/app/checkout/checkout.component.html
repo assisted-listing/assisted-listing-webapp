@@ -17,6 +17,7 @@
           <button *ngIf="!isSubscribed() || user.listingsRemaining <= 0" (click)="navigateToSubscription()" class="subscribe-button">Subscribe</button>
           <button *ngIf="isSubscribed() && user.listingsRemaining > 0" class="subscribe-button" (click)="claimListing()">Confirm</button>
 
+
       </div>  
       </div>
     </div>
@@ -30,6 +31,17 @@
                 {{check.listing}}
             </p>
         </div>
+        <div class="buttons-container">
+          <app-payment-form *ngIf="!isSubscribed()"></app-payment-form>
+          <div class="subscription-form">
+            <mat-form-field appearance="outline">
+              <input matInput [(ngModel)]="email" type="email" placeholder="Enter an email recipient" />
+            </mat-form-field>
+            <button mat-raised-button color="primary">Email me a copy</button>
+          </div>
+
+
+      </div>  
 
       </div>
     </div>

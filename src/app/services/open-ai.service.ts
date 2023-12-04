@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class OpenAiService {
   constructor(private http: HttpClient) {}
 
   getListing(prompt: string) {
-    const headers = new HttpHeaders().set('Authorization', 'Bearer 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');
+    const headers = new HttpHeaders().set('Authorization', environment.openAISK);
     const body = {
       "model": "gpt-3.5-turbo",
       "messages": [

@@ -5,13 +5,14 @@
   font-weight: 300;
 }
 
+
 .pricing1 h1,
 .pricing1 h2,
 .pricing1 h3,
 .pricing1 h4,
 .pricing1 h5,
 .pricing1 h6 {
-  color: #3e4555;
+  color: #f4f8fa;;
 }
 
 .header-container{
@@ -41,6 +42,10 @@
 
 }
 
+.display-amount{
+  color: #1dc8cc;
+}
+
 .list-item{
     padding: 3px;
 }
@@ -53,6 +58,7 @@
     padding: 1rem;
     margin: 1rem;
     border-radius: 20px;
+    color: #f4f8fa;
 }
 
 .pricing1 .font-weight-medium {
@@ -245,7 +251,11 @@ a:hover, a:active {
 
 .pricing1 .display-5 {
   font-size: 3rem;
-	color: #263238;
+	color: #7ff7f7;
+}
+
+.click{
+  color: rgb(207, 249, 249);
 }
 
 .pricing1 .pricing sup {

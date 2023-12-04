@@ -9,9 +9,9 @@ import { AuthGuard } from './auth/auth-guard.guard';
 import { ContactComponent } from './contact/contact.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
-  {path: '', component: LandingPageComponent },
 {path: 'generate', component: IntakeFormComponent},
 {path: 'payTest', component: PaymentFormComponent },
 {path: 'pricing', component: PricingComponent },
@@ -20,7 +20,10 @@ const routes: Routes = [
 {path: 'register', component: SignUpComponent, canActivate: [AuthGuard], },
 {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard]},
 {path: 'checkout/success', component: ContactComponent, canActivate: [AuthGuard]},
-{path: 'checkout/failure', component: PricingComponent, canActivate: [AuthGuard]}];
+{path: 'checkout/failure', component: PricingComponent, canActivate: [AuthGuard]},
+{path: 'history', component: HistoryComponent, canActivate: [AuthGuard]},
+{path: '**', component: LandingPageComponent }]
+;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

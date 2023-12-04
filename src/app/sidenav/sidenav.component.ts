@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sidenav',
@@ -24,7 +25,7 @@ export class SidenavComponent {
   }
 
   openCustomerPortal(){
-  window.open('https://billing.stripe.com/p/login/test_4gwcQd4TF8qPdVueUU', '_blank')
+  window.open(environment.stripeModificationURL, '_blank')
 }
 
 }

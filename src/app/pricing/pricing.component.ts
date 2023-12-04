@@ -4,6 +4,7 @@ import { AuthService } from '../auth/auth.service';
 import { Router, NavigationExtras } from '@angular/router';
 import { UserDtl } from '../models/user';
 import { AlBackendService } from '../services/al-backend.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class PricingComponent {
 
 
   checked: boolean = false;
-  stripePromise = loadStripe('pk_test_51NiOkfAtI9Pqdjf04d6aecxeZPJw8JYlLhucHL4dVmepdHVPvsC0Y8LrtvQ3JMWxOrahvh4y0NKYu5iV80g330As00xnYNOdDM');
+  stripePromise = loadStripe(environment.stripePK);
   redirect: string[] = []
   loggedIn: boolean
   user: UserDtl
@@ -46,7 +47,7 @@ export class PricingComponent {
   purchasePlan (price: string) {
     if (this.loggedIn){
       if (this.user.subscribedFlag){
-        alert('Subscription Update portal coming in a future release')
+        window.open(environment.stripeModificationURL, '_blank')
       }
       else{
         this.checkout(price)
@@ -64,8 +65,15 @@ export class PricingComponent {
     }
   }
 
-  async checkout(price: string='price_1NnPbJAtI9Pqdjf0QXqjeRhK') {
+  async checkout(plantype: string='basic') {
     const stripe = await this.stripePromise;
+    var price = ''
+    if (plantype === 'basic'){
+      price = environment.stripeAgentBasic
+    }
+    else {
+      price = environment.stripeAgentPlus
+    }
 
     const { error } = await stripe?.redirectToCheckout({
       mode: "subscription",

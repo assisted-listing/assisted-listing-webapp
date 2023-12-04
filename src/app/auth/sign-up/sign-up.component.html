@@ -8,6 +8,12 @@
         <mat-label>Email</mat-label>
         <input matInput name="email"
         ngModel type="email" #emailInput="ngModel" [(ngModel)]="email" email
+        placeholder="Enter Email" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput name="username"
+        ngModel type="username" [(ngModel)]="username"
         placeholder="Enter Username" required />
       </mat-form-field>
       <mat-form-field appearance="outline">
