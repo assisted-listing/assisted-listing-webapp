@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sidenav',
@@ -22,5 +23,9 @@ export class SidenavComponent {
     this.authService.onLogout()
     this.onSideNavClose()
   }
+
+  openCustomerPortal(){
+  window.open(environment.stripeModificationURL, '_blank')
+}
 
 }

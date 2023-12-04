@@ -1,10 +1,18 @@
-<mat-toolbar color="warn">
+<mat-toolbar class="toolbar" color="warn">
     <div fxHide.gt-xs>
-        <button mat-icon-button (click)="onToggleSideNav()">
-            <mat-icon>menu</mat-icon>
-        </button>
+      <button mat-icon-button (click)="onToggleSideNav()">
+        <mat-icon>menu</mat-icon>
+      </button>
     </div>
+  
+    <div class="spacer"></div> <!-- Spacer -->
+  
     <div>
-        <a routerLink="/">Assisted Listing</a>
+      <a routerLink="/">Assisted Listing</a>
     </div>
-    <mat-toolbar/>
+  
+    <div class="spacer"></div> <!-- Spacer -->
+  
+    <app-cart-icon></app-cart-icon>
+  </mat-toolbar>
+  

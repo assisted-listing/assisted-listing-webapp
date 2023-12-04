@@ -1,4 +1,4 @@
-<div class="pricing1 py-5 bg-light">
+<div class="pricing1">
     <div class="container">
         <div class="header-container">
             <div class="col-md-8 text-center">
@@ -8,7 +8,6 @@
                     <span class="onoffswitch-label">MONTHLY</span>
                     <div class="onoffswitch">
                         <mat-slide-toggle class="example-margin" color="primary" [(ngModel)]="checked">
-
                         </mat-slide-toggle>
                     </div>
                     <span class="onoffswitch-label">YEARLY</span>
@@ -37,7 +36,7 @@
                                 <li class="list-item-no-show">&nbsp;</li>
                             </ul>
                             <div class="bottom-btn">
-                                <a class="btn btn-success-gradiant btn-md text-white btn-block" (click)="purchasePlan('price_1NnPbJAtI9Pqdjf0QXqjeRhK')"><span>Choose
+                                <a class="btn btn-success-gradiant btn-md text-white btn-block" (click)="purchasePlan('basic')"><span>Choose
                                         Plan</span></a>
                             </div>
                         </div>
@@ -67,7 +66,7 @@
                                 <li class="list-item-no-show">&nbsp;</li>
                             </ul>
                             <div class="bottom-btn">
-                                <a class="btn btn-danger-gradiant btn-md text-white btn-block" (click)="purchasePlan('price_1NwcnkAtI9Pqdjf0xZ8nZuyw')">
+                                <a class="btn btn-danger-gradiant btn-md text-white btn-block" (click)="purchasePlan('agentplus')">
                                     <span>Choose Plan</span></a>
                             </div>
                         </div>
@@ -113,7 +112,7 @@
             <div class="card text-center card-shadow on-hover border-0 mb-4">
                 <div class="card-body font-14">
                     <h5 class="mt-3 mb-1 font-weight-medium">AGENT BASIC</h5>
-                    <small class="monthly">Saves $50!</small>
+                    <small class="click">Saves $50!</small>
 
 
                     <div class="pricing my-3">
@@ -143,7 +142,7 @@
                         <span class="price-badge">Popular</span>
                     </div>
                     <h5 class="mt-3 mb-1 font-weight-medium">AGENT+</h5>
-                    <small class="monthly">Saves $110!</small>
+                    <small class="click">Saves $110!</small>
 
 
                     <div class="pricing my-3">

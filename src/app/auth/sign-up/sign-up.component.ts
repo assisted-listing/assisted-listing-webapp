@@ -26,24 +26,16 @@ export class SignUpComponent implements OnInit {
 
   username: string = '';
   password: string = '';
-  redirect: string[];
+  extras: NavigationExtras;
 
-  constructor(private router: Router, private alService: AlBackendService) { 
-    const currentNav = this.router.getCurrentNavigation()
-    console.log('sign-up')
-    console.log(currentNav)
-    const state = currentNav?.extras.state as {
-      redirect: string[]
-    }; 
+  constructor(private router: Router, private alService: AlBackendService) {
+    this.extras = this.router.getCurrentNavigation()?.extras!
+    console.log(this.extras)
 
-    if (state.redirect !== undefined){
-      this.redirect = state.redirect
-      console.log('redirect received')
-    }
   }
 
-  ngOnInit(): void { 
-    
+  ngOnInit(): void {
+
   }
 
   onSignup(form: NgForm) {
@@ -56,7 +48,7 @@ export class SignUpComponent implements OnInit {
       var userPool = new CognitoUserPool(poolData);
       var attributeList = [];
       let formData: formDataInterface = {
-        
+
         "email": this.email,
       }
 
@@ -79,14 +71,10 @@ export class SignUpComponent implements OnInit {
         }
         console.log(result)
         //invoke dynamo user create
-          alert('User created succesfully. Check email for verification link')
+        alert('User created succesfully. Check email for verification link')
 
-          const navigationExtras: NavigationExtras = {
-      state: {
-        redirect: this.redirect,
-      }
-    }
-    this.router.navigate(['\login'], navigationExtras)
+
+        this.router.navigate(['\login'], this.extras)
 
       });
     }

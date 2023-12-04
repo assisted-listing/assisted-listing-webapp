@@ -5,6 +5,8 @@ import { Checkout } from '../models/checkout';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 import { User, UserDtl } from '../models/user';
+import { environment } from 'src/environments/environment';
+import { LocalStorageService } from '../services/local-storage.service';
 
 
 
@@ -18,26 +20,30 @@ import { User, UserDtl } from '../models/user';
 
 export class CheckoutComponent {
 
-  stripePromise = loadStripe('pk_test_51NiOkfAtI9Pqdjf04d6aecxeZPJw8JYlLhucHL4dVmepdHVPvsC0Y8LrtvQ3JMWxOrahvh4y0NKYu5iV80g330As00xnYNOdDM');
+  stripePromise = loadStripe(environment.stripePK);
   checkoutID: string
   check: Checkout
   partialMessage: string
   loggedin: Boolean
   user: UserDtl
   email: string
+  subscribed: boolean = this.isSubscribed()
 
-  constructor(private backendService: AlBackendService, private authService: AuthService, private route: ActivatedRoute, private router: Router) { }
+
+  constructor(private backendService: AlBackendService, private authService: AuthService, private route: ActivatedRoute, private router: Router, private localStorageService: LocalStorageService) { }
 
   ngOnInit(){
     this.checkoutID = this.route.snapshot.queryParamMap.get('checkoutID')!;
 
     console.log('ID')
     console.log(this.checkoutID)
-    if (this.checkoutID == null ){this.checkoutID = '12345678'}
+    if (this?.checkoutID == null ){this.checkoutID = '12345678'}
 
     this.backendService.getCheckout(this.checkoutID).subscribe((res: any) => {
       console.log(res)
       this.check = res
+      if (!this.check.paid){this.localStorageService.addCheckoutItem(this.check)}
+
       this.partialMessage = this.check.listing.split('. ', 2)[0] + '.' + this.check.listing.split('. ', 3)[1] + '.'
     })
 
@@ -74,7 +80,7 @@ export class CheckoutComponent {
   else {
     const navigationExtras: NavigationExtras = {
       state: {
-        redirect: ['checkout?checkoutID=' + this.checkoutID, 'pricing']
+        redirect: ['checkout?checkoutID=' + this.checkoutID]
       }
     }
     this.router.navigate(['\login'], navigationExtras)
@@ -85,6 +91,7 @@ export class CheckoutComponent {
   claimListing(){
     this.backendService.claimListing(this.checkoutID).subscribe((res: Checkout) => {
       this.check = res
+      if (!this.check.paid){this.localStorageService.addCheckoutItem(this.check)}
       this.partialMessage = res.listing
     })
   }

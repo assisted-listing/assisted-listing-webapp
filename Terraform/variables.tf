@@ -201,7 +201,12 @@ variable "cloudfront_custom_error_responses" {
     response_code         = number
     response_page_path    = string
   }))
-  default = []
+  default = [
+    {error_caching_min_ttl = 300,
+    error_code            = 403,
+    response_code         = 200
+    response_page_path    = "/index.html"}
+    ]
 }
 
 variable "cloudfront_web_acl_id" {

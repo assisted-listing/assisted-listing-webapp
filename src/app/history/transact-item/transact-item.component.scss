@@ -1,0 +1,52 @@
+.transaction-card {
+    background-color: #ffffff; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    margin-bottom: 16px; /* Spacing between cards */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+}
+
+.navigate-button {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.transaction-card:hover .navigate-button {
+  opacity: 1;
+}
+  
+  .transaction-card:hover {
+    transform: translateY(-5px); /* Move the card up on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+  }
+  
+  .checkout-id {
+    font-weight: bold; /* Make the checkout ID bold */
+  }
+  
+  .transaction-date {
+    font-size: 12px; /* Smaller font size */
+    color: rgba(0, 0, 0, 0.5); /* Faded color */
+    opacity: 0; /* Hide initially */
+    transition: opacity 0.2s; /* Fade-in transition */
+  }
+  
+  .transaction-card:hover .transaction-date {
+    opacity: 1; /* Show on hover */
+  }
+  
+  /* Additional styling for content within the card */
+  .mat-card-content {
+    padding: 16px;
+  }
+  
+  /* Styling for text elements */
+  .transaction-body {
+    display: block;
+    /* Add your preferred styles for font color, size, etc. here */
+  }
+  

@@ -1,0 +1,12 @@
+<mat-card class="transaction-card" (click)="onNavigateToTransaction(transaction.checkoutID)">
+    <mat-card-header>
+        <div mat-card-title class="checkout-id">{{ transaction.checkoutID }}</div>
+        <div mat-card-subtitle class="transaction-date">{{ transaction.paidTS }}</div>
+        <button mat-icon-button class="navigate-button">
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+    </mat-card-header>
+    <mat-card-content>
+        <span class="transaction-body">{{ shortListing }}</span>
+    </mat-card-content>
+</mat-card>

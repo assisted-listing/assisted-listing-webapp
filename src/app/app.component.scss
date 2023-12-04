@@ -1,7 +1,18 @@
 mat-sidenav-container,mat-sidenav, mat-sidenav-content {
-    height: 100%
+    height: 100%;
+    background-color: #232323;
 }
 
 mat-sidenav{
     width: 20rem
 }
+
+:host {
+    display: block;
+    background-color: #f0f0f0; /* Replace with your desired background color */
+    /* Other component styles */
+  }
+
+  .mat-sidenav-container {
+    height: 100%;
+ }

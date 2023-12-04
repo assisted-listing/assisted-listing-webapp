@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { OpenAiService } from '../services/open-ai.service';
 import { AlBackendService } from '../services/al-backend.service';
   import { HousingSection, sections } from '../models/housingSections';
 
@@ -18,7 +19,7 @@ import { Checkout } from '../models/checkout';
   styleUrls: ['./intake-form.component.scss'],
 })
 export class IntakeFormComponent {
-  constructor(private router: Router, private alService: AlBackendService) { }
+  constructor(private router: Router, private alService: AlBackendService, private openAIService: OpenAiService) { }
   responseMessage: string;
   progressValue= 50;
 
@@ -71,7 +72,10 @@ export class IntakeFormComponent {
   }
 
   submitForm(){
-    this.alService.createListing(this.createPrompt()).subscribe((res: Checkout) => {
+    const prompt = this.createPrompt()
+    this.openAIService.getListing(this.createPrompt()).subscribe((resp: any) => {
+      const responseMessage = resp['choices'][0]['message']['content']
+    this.alService.createListing(prompt, responseMessage).subscribe((res: Checkout) => {
       
       const navigationExtras: NavigationExtras = {
         queryParams: { checkoutID: res.checkoutID } ,
@@ -83,6 +87,7 @@ export class IntakeFormComponent {
   
       this.router.navigate(['checkout'], navigationExtras)
     })
+  })
     
   }
 

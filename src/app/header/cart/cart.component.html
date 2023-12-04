@@ -1,0 +1,20 @@
+<button mat-icon-button [matMenuTriggerFor]="cartMenu">
+    <mat-icon matBadge="{{cartItemsCount}}" matBadgeColor="accent" matBadgePosition="below after">shopping_cart</mat-icon>
+</button>
+  <mat-menu #cartMenu="matMenu" (closed)="onMenuClosed()">
+    <ng-container *ngIf="cartItems.length > 0; else emptyCart">
+        <a mat-menu-item *ngFor="let item of cartItems" routerLink="checkout" [queryParams]="{checkoutID: item.checkoutID}" class="menu-item">
+          <mat-icon class="icon">home</mat-icon>
+          <span class="item-details">{{ item.checkoutID }} - {{ item.userID }}</span>
+        </a>
+        
+      </ng-container>
+      <ng-template #emptyCart>
+        <mat-menu-item>No items in cart</mat-menu-item>
+      </ng-template>
+      <a *ngIf="isAuth" mat-menu-item routerLink="history" class="menu-item">
+        <mat-icon class="icon">receipt</mat-icon>
+        <span class="item-details">View Past Checkouts</span>
+      </a>
+  </mat-menu>
+  

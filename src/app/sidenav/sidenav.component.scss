@@ -9,4 +9,20 @@ a:hover, a:active {
 .nav-caption {
     display: inline-block;
     padding-left: 6px;
+    color: white;
+}
+
+.list-box {
+    display: flex; /* Use flexbox */
+  align-items: center;
+}
+
+.icon-box {
+    width: 32px; /* Adjust the width and height to create a circular shape */
+    height: 32px;
+    border-radius: 50%; /* Makes the container circular */
+    background-color: #ffffff; /* Replace with your desired background color */
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
 }

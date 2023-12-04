@@ -13,16 +13,17 @@ export class AuthGuard implements CanActivate {
   redirects: string[]
 
 
-  constructor(private router: Router, private authService: AuthService) {     
+  constructor(private router: Router, private authService: AuthService) {    
+    console.log('AuthGuard:')
+ 
     const currentNav = this.router.getCurrentNavigation()
     const navState = currentNav?.extras.state as {
       redirect: string[]
     };
-    console.log('AuthGuard:')
     console.log(navState)
 
 
-    if (navState !== undefined && navState.redirect !== undefined) {
+    if (navState && navState?.redirect) {
       this.redirects = navState.redirect
       console.log('Redirect Found')
 
@@ -53,6 +54,12 @@ export class AuthGuard implements CanActivate {
         break;
       }
       case '/profile': {
+        if (!isAuth) {
+          this.router.navigate(['login'])
+        }
+        return isAuth;
+      }
+      case '/history': {
         if (!isAuth) {
           this.router.navigate(['login'])
         }

@@ -9,6 +9,9 @@ a:hover, a:active {
 
 mat-toolbar {
     border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navigation-items {
@@ -17,3 +20,13 @@ mat-toolbar {
     margin: 0;
 
 }
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .spacer {
+    flex: 1; /* This will make the spacer take up all available space between elements */
+  }

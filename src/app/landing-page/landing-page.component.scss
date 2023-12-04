@@ -1,118 +1,108 @@
-// Reset some default styles
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  // Header styles
-  header {
-    background-color: #6A4C93;
-  
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #fff;
-    }
-  
-    nav {
-      display: flex;
-      align-items: center;
-      a {
-        margin-right: 1rem;
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-  }
+.landing {
+  height: 120vh;
+  background-image: url('https://img.freepik.com/premium-photo/pictures-beautiful-two-story-house-with-courtyard-ai-generated-art_848903-3435.jpg');
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+}
 
-  .hero {
-    background-color: #6A4C93;
-    color: #fff;
-    text-align: center;
-    padding: 5rem 0;
-  
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-  
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-  
-      p {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-      }
-    }
-  }
-  
-  // ... (rest of the styles remain the same) ...
-  
-  // Features section styles
-// Features section styles
-.feature {
-    padding: 3rem 0;
-    text-align: center;
-  
-    &.alt-bg {
-      background-color: #E4F2E1;
-    }
-  
-    .feature-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 1.5rem;
-      width: 100%;
-  
-      img {
-        max-width: 100px;
-        margin-right: 1rem;
-        padding-left: 1rem; // Added padding here
-      }
-  
-      &.left {
-        justify-content: flex-start;
+.middle-card {
+  order: 2; /* Ensure middle card is displayed as the second */
+}
 
-        img {
-            margin-right: 1rem; // Adjusted margin here
-            padding-left: 25rem; // Added padding here
-          }
+.landing-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Ensure content stays above the background */
+}
 
-          .text {
-            text-align: left;
-          }
-      }
-  
-      &.right {
-        justify-content: flex-end;
-  
-        img {
-          
-          padding-right: 30rem; // Added padding here
-        }
-  
-        .text {
-          text-align: right;
-        }
-      }
-  
-      .text {
-        flex: 1;
-  
-        h2 {
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-        }
-      }
-    }
-  }
-  
-  // ... (rest of the styles remain the same) ...
-  
-  
+.get-started-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  border: 2px solid #3498db;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1; /* Ensure button stays above the background */
+}
+
+.get-started-button:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+.button-text {
+  display: block;
+}
+
+/* Add a pseudo-element for the background image to create the parallax effect */
+.landing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://us.123rf.com/450wm/bulldogza/bulldogza1103/bulldogza110300148/9165567-star-on-space.jpg?ver=6');
+  background-size: cover;
+  opacity: 0.5; /* Initial transparency */
+  z-index: 0;
+  transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+/* Existing styles remain unchanged */
+.fact-cards-container {
+  background-color: #111; /* Night theme background color */
+  padding: 50px 0;
+  margin-left: 4px;
+}
+
+.fact-card {
+  width: calc(50% - 20px); /* Adjust the width for half the screen width */
+  margin-bottom: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  margin-left: 4px;
+
+}
+
+.fact-content {
+  background-color: #222; /* Darker background color for facts */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff; /* White text color for readability */
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+
+
+/* Additional styles for the fading in and out effect */
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+}

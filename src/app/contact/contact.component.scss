@@ -1,0 +1,80 @@
+/* contact.component.scss */
+.contact-page {
+    background-color: #ccc;
+    padding: 10px;
+    /* Styling for the page container */
+    /* ... */
+  
+    .founders-section {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
+      
+  
+      .founder {
+        text-align: center;
+  
+        .founder-image {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          border: 3px solid #e52e71; /* Adjust border color as needed */
+          margin-bottom: 10px;
+        }
+  
+        .founder-details {
+          h3 {
+            margin-bottom: 5px;
+          }
+          p {
+            /* Founder description styles */
+          }
+        }
+      }
+    }
+  
+    .main-body {
+      /* Styling for the main body section */
+      /* ... */
+    }
+  
+    .contact-details {
+      /* Styling for contact details section */
+      /* ... */
+  
+      .contact-icon {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+  
+        mat-icon {
+          font-size: 30px;
+          margin-right: 10px;
+        }
+  
+        p {
+          margin: 0;
+          a {
+            text-decoration: none;
+            color: #333;
+          }
+        }
+  
+        &:not(:last-child) {
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    .icon-box {
+        width: 32px; /* Adjust the width and height to create a circular shape */
+        height: 32px;
+        border-radius: 50%; /* Makes the container circular */
+        background-color: #ffffff; /* Replace with your desired background color */
+        justify-content: center;
+        align-items: center;
+        display: inline-flex;
+    }
+  }
+  
