@@ -67,16 +67,23 @@
   background-color: #111; /* Night theme background color */
   padding: 50px 0;
   margin-left: 4px;
+  align-items: center;
+
 }
 
 .fact-card {
-  width: calc(50% - 20px); /* Adjust the width for half the screen width */
+  width: calc(80% - 20px); /* Adjust the width for half the screen width */
   margin-bottom: 40px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, transform 0.5s ease;
-  margin-left: 4px;
+  margin-left: 8px;
 
+  
+}
+
+.right {
+  margin-left: calc(20% - 20px)
 }
 
 .fact-content {
@@ -105,4 +112,49 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(-20px);
+  border: 3px solid #0a0a0a; /* Adjust border color as needed */
+
+}
+
+.oversize {
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.custom-button {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  margin-left: calc(25%);
+  padding-block: 30px; /* Added padding inside the button */
+  padding-inline: 100px;
+  font-size: 2rem;
+  color: #fff; /* Set font color to white */
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative; /* Required for the shadowing effect */
+  transition: box-shadow 0.3s ease;
+
+  /* Shadowing effect within the button */
+  box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.1),
+              inset 0 3px 6px rgba(255, 255, 255, 0.1),
+              inset 0 3px 6px rgba(255, 255, 255, 0.1);
+
+  /* Hover effect */
+  &:hover {
+    box-shadow: inset 0 6px 12px rgba(255, 255, 255, 0.2),
+                inset 0 6px 12px rgba(255, 255, 255, 0.2),
+                inset 0 6px 12px rgba(255, 255, 255, 0.2);
+  }
 }
