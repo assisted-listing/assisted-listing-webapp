@@ -50,4 +50,8 @@ isAuth = this.authService.isLoggedIn()
     }
     this.router.navigate(['/checkout'], navigationExtras)
   }
+
+  removeCheckout(item: Checkout){
+    this.localStorageService.removeCheckoutItem(item.checkoutID)
+  }
 }

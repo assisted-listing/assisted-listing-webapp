@@ -6,6 +6,8 @@
         <a mat-menu-item *ngFor="let item of cartItems" routerLink="checkout" [queryParams]="{checkoutID: item.checkoutID}" class="menu-item">
           <mat-icon class="icon">home</mat-icon>
           <span class="item-details">{{ item.checkoutID }} - {{ item.userID }}</span>
+          <mat-icon (click)="removeCheckout(item)" class="icon">cancel</mat-icon>
+
         </a>
         
       </ng-container>

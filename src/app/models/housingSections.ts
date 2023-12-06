@@ -26,7 +26,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['1', '2', '3', '4'],
     multiple: "false",
-    icon: "home",
+    icon: "hotel",
     locked: "false",
     selectedOptions: []
   },
@@ -36,7 +36,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['1', '1.5', '2', '2.5', '3', '3.5'],
     multiple: "false",
-    icon: "home",
+    icon: "wc",
     locked: "false",
     selectedOptions: []
   },
@@ -46,7 +46,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['Cape', 'Victorian', 'Ranch', 'Modern', 'Contemporary'],
     multiple: "false",
-    icon: "home",
+    icon: "business",
     locked: "false",
     selectedOptions: []
   },
@@ -56,7 +56,7 @@ export const sections: HousingSection[] = [{
     active: true,
     choices: ['Natural Gas', 'Propane', 'Oil', 'Solar'],
     multiple: "false",
-    icon: "home",
+    icon: "wb_sunny",
     locked: "false",
     selectedOptions: []
   },
@@ -66,7 +66,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['Central Air', 'Window Unit', 'Portable'],
     multiple: "false",
-    icon: "home",
+    icon: "ac_unit",
     locked: "false",
     selectedOptions: []
   },
@@ -76,7 +76,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['One Car Garage', 'Two Car Garage', 'Large Driveway'],
     multiple: "false",
-    icon: "home",
+    icon: "drive_eta",
     locked: "false",
     selectedOptions: []
   },
@@ -86,7 +86,7 @@ export const sections: HousingSection[] = [{
     active: true,
     choices: [],
     multiple: "false",
-    icon: "home",
+    icon: "border_all",
     locked: "false",
     selectedOptions: []
   },
@@ -96,7 +96,7 @@ export const sections: HousingSection[] = [{
     active: true,
     choices: [],
     multiple: "false",
-    icon: "home",
+    icon: "nature_people",
     locked: "false",
     selectedOptions: []
   },
@@ -106,7 +106,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: [],
     multiple: "false",
-    icon: "home",
+    icon: "calendar_today",
     locked: "false",
     selectedOptions: []
   },
@@ -116,7 +116,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['Finished', 'Partially Finished'],
     multiple: "false",
-    icon: "home",
+    icon: "meeting_room",
     locked: "false",
     selectedOptions: []
   },
@@ -126,7 +126,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['1', '2', '3'],
     multiple: "false",
-    icon: "home",
+    icon: "location_city",
     locked: "false",
     selectedOptions: []
   },
@@ -136,7 +136,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['Waterfront', 'City', 'Mountain', 'Woods', 'Rural'],
     multiple: "true",
-    icon: "home",
+    icon: "where_to_vote",
     locked: "false",
     selectedOptions: []
   },
@@ -146,7 +146,7 @@ export const sections: HousingSection[] = [{
     active: true,
     choices: ['Recently rennovated construction', 'Remodeled Bathroom', 'New Tile', 'Jacuzzi', 'Shower + Tub', 'Kitchen Island', 'Stainless Steel Appliances', 'Gas Stove', 'Electric Stove', 'Pool', 'Hot Tub', 'Tennis Court', 'Basketball Court', 'Gas Fireplace', 'Fireplace', 'New Flooring', 'New Roof', 'New Lighting', 'Solar Panel'],
     multiple: "true",
-    icon: "home",
+    icon: "build",
     locked: "true",
     selectedOptions: []
   },
@@ -156,7 +156,7 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['1 Paragraph', '2 Paragraphs', '3 Paragraphs'],
     multiple: "false",
-    icon: "home",
+    icon: "library_books",
     locked: "false",
     selectedOptions: []
   },
@@ -166,7 +166,17 @@ export const sections: HousingSection[] = [{
     active: false,
     choices: ['Formal', 'Casual', 'Bullet list'],
     multiple: "false",
-    icon: "home",
+    icon: "create",
+    locked: "false",
+    selectedOptions: []
+  },
+  {
+    name: 'Points of Emphasis',
+    category: 'Writing',
+    active: false,
+    choices: ['Property', 'Price', 'Neighborhood', 'Location', 'Pet Friendly'],
+    multiple: "false",
+    icon: "assignment_late",
     locked: "false",
     selectedOptions: []
   }

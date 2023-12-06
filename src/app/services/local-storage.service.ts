@@ -30,10 +30,29 @@ export class LocalStorageService {
 
   addCheckoutItem(newCheckout: Checkout): void {
     const checkoutArray = this.retrieveCheckoutArray();
-    if (!checkoutArray.includes(newCheckout)){
+    if (checkoutArray.every(checkout => checkout.checkoutID !== newCheckout.checkoutID)){
       checkoutArray.push(newCheckout);
     }
+    else {
+      const indexOfCheckoutToReplace = checkoutArray.findIndex(checkout => checkout.checkoutID === newCheckout.checkoutID);
+      checkoutArray[indexOfCheckoutToReplace] = newCheckout
+      checkoutArray.push(newCheckout);
+
+
+    }
     this.updateCheckoutArray(checkoutArray);
+  }
+
+  removeCheckoutItem(checkoutIDToRemove: string): void {
+    const checkoutArray = this.retrieveCheckoutArray();
+    const indexOfCheckoutToRemove = checkoutArray.findIndex(
+      checkout => checkout.checkoutID === checkoutIDToRemove
+    );
+
+    if (indexOfCheckoutToRemove !== -1) {
+      checkoutArray.splice(indexOfCheckoutToRemove, 1);
+      this.updateCheckoutArray(checkoutArray);
+    }
   }
 
   // Other methods to update, delete, or manipulate the checkout array

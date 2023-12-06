@@ -2,7 +2,8 @@
 
 <app-loader></app-loader>
 
-<app-layout>
+<app-layout class="bg">
+    <div class="bg">
 <mat-sidenav-container>
     <mat-sidenav #sidenav role="navigation">
         <app-sidenav (sidenavClose)="sidenav.close()"></app-sidenav>
@@ -17,4 +18,5 @@
 
         </mat-sidenav-content>
 </mat-sidenav-container>
+</div>
 </app-layout>

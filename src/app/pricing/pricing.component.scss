@@ -120,6 +120,7 @@
   background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .pricing1 .btn-success-gradiant:hover {
@@ -129,6 +130,8 @@
   background: -webkit-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
   background: -o-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
   background: linear-gradient(to right, #1dc8cc 0%, #2cdd9b 100%);
+  cursor: pointer;
+
 }
 
 .pricing1 .btn-danger-gradiant {
@@ -140,6 +143,7 @@
   background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
   text-decoration: none;
   color: white;
+  cursor: pointer;
 
 
 }
